@@ -1,0 +1,1558 @@
+{
+ "tables": [
+  {
+   "title": "Procedures",
+   "description": "Catalog of procedures for the coordination dropdown (from PROCEDURES sheet).",
+   "fields": [
+    {
+     "title": "Procedure Name",
+     "type": "SingleLineText"
+    },
+    {
+     "title": "Category",
+     "type": "SingleSelect",
+     "options": {
+      "choices": [
+       {
+        "title": "Major Procedures",
+        "color": "#00BFBF"
+       },
+       {
+        "title": "Minor Procedures",
+        "color": "#B4A7D6"
+       },
+       {
+        "title": "Tests",
+        "color": "#FF9900"
+       }
+      ]
+     }
+    },
+    {
+     "title": "Active",
+     "type": "Checkbox"
+    }
+   ]
+  },
+  {
+   "title": "Insurances",
+   "description": "Payer catalog used by Authorizations. Short Name matches the Verifications list.",
+   "fields": [
+    {
+     "title": "Payer Name",
+     "type": "SingleLineText"
+    },
+    {
+     "title": "Short Name",
+     "type": "SingleSelect",
+     "options": {
+      "choices": [
+       {
+        "title": "Aetna",
+        "color": "#36BFFF"
+       },
+       {
+        "title": "Medicare part b",
+        "color": "#FA8231"
+       },
+       {
+        "title": "Meridian",
+        "color": "#27D665"
+       },
+       {
+        "title": "Bluecross complete",
+        "color": "#FF4A3F"
+       },
+       {
+        "title": "Medicaid",
+        "color": "#7D26CD"
+       },
+       {
+        "title": "Molina",
+        "color": "#FCBE3A"
+       },
+       {
+        "title": "Mclaren",
+        "color": "#2D7FF9"
+       },
+       {
+        "title": "Caresource",
+        "color": "#FF08C2"
+       },
+       {
+        "title": "HAP",
+        "color": "#20C933"
+       },
+       {
+        "title": "Humana",
+        "color": "#8B572A"
+       },
+       {
+        "title": "UHC",
+        "color": "#18BFFF"
+       },
+       {
+        "title": "UMR",
+        "color": "#F82B60"
+       },
+       {
+        "title": "Tricare",
+        "color": "#666666"
+       },
+       {
+        "title": "Wellcare",
+        "color": "#0B8A73"
+       },
+       {
+        "title": "Zing",
+        "color": "#C9A227"
+       },
+       {
+        "title": "Without ins",
+        "color": "#5D9CEC"
+       },
+       {
+        "title": "Bcbs",
+        "color": "#E8384F"
+       },
+       {
+        "title": "OON",
+        "color": "#7A869A"
+       },
+       {
+        "title": "Priority",
+        "color": "#B2DFDB"
+       },
+       {
+        "title": "Cigna",
+        "color": "#FFB74D"
+       },
+       {
+        "title": "Other",
+        "color": "#9575CD"
+       }
+      ]
+     }
+    },
+    {
+     "title": "Payer Type",
+     "type": "SingleSelect",
+     "options": {
+      "choices": [
+       {
+        "title": "Commercial",
+        "color": "#36BFFF"
+       },
+       {
+        "title": "Medicare",
+        "color": "#FA8231"
+       },
+       {
+        "title": "Medicaid",
+        "color": "#27D665"
+       },
+       {
+        "title": "Auto / PIP",
+        "color": "#FF4A3F"
+       },
+       {
+        "title": "Workers Comp",
+        "color": "#7D26CD"
+       },
+       {
+        "title": "Other",
+        "color": "#FCBE3A"
+       }
+      ]
+     }
+    },
+    {
+     "title": "Aliases",
+     "type": "LongText",
+     "description": "Spellings seen in the historical Hodroj log (one per line), used to match on migration."
+    },
+    {
+     "title": "Active",
+     "type": "Checkbox"
+    }
+   ]
+  },
+  {
+   "title": "Patients",
+   "description": "One record per patient (name + DOB). Linked to Verifications, Authorizations and Procedure Coordination.",
+   "fields": [
+    {
+     "title": "Patient Name",
+     "type": "SingleLineText",
+     "description": "LAST, FIRST"
+    },
+    {
+     "title": "Date of Birth",
+     "type": "Date",
+     "options": {
+      "date_format": "MM/DD/YYYY"
+     }
+    },
+    {
+     "title": "Preferred Language",
+     "type": "SingleSelect",
+     "options": {
+      "choices": [
+       {
+        "title": "English",
+        "color": "#36BFFF"
+       },
+       {
+        "title": "Spanish",
+        "color": "#FA8231"
+       },
+       {
+        "title": "Arabic",
+        "color": "#27D665"
+       }
+      ]
+     },
+     "default_value": "English"
+    },
+    {
+     "title": "Notes",
+     "type": "LongText"
+    }
+   ]
+  },
+  {
+   "title": "Verifications",
+   "description": "Replica of the 'Verifications CSJ' sheet.",
+   "fields": [
+    {
+     "title": "Patient Name",
+     "type": "SingleLineText",
+     "description": "LAST, FIRST (column 'First Name' in the sheet)"
+    },
+    {
+     "title": "Date of Birth",
+     "type": "Date",
+     "options": {
+      "date_format": "MM/DD/YYYY"
+     }
+    },
+    {
+     "title": "Insurance",
+     "type": "SingleSelect",
+     "options": {
+      "choices": [
+       {
+        "title": "Aetna",
+        "color": "#36BFFF"
+       },
+       {
+        "title": "Medicare part b",
+        "color": "#FA8231"
+       },
+       {
+        "title": "Meridian",
+        "color": "#27D665"
+       },
+       {
+        "title": "Bluecross complete",
+        "color": "#FF4A3F"
+       },
+       {
+        "title": "Medicaid",
+        "color": "#7D26CD"
+       },
+       {
+        "title": "Molina",
+        "color": "#FCBE3A"
+       },
+       {
+        "title": "Mclaren",
+        "color": "#2D7FF9"
+       },
+       {
+        "title": "Caresource",
+        "color": "#FF08C2"
+       },
+       {
+        "title": "HAP",
+        "color": "#20C933"
+       },
+       {
+        "title": "Humana",
+        "color": "#8B572A"
+       },
+       {
+        "title": "UHC",
+        "color": "#18BFFF"
+       },
+       {
+        "title": "UMR",
+        "color": "#F82B60"
+       },
+       {
+        "title": "Tricare",
+        "color": "#666666"
+       },
+       {
+        "title": "Wellcare",
+        "color": "#0B8A73"
+       },
+       {
+        "title": "Zing",
+        "color": "#C9A227"
+       },
+       {
+        "title": "Without ins",
+        "color": "#5D9CEC"
+       },
+       {
+        "title": "Bcbs",
+        "color": "#E8384F"
+       },
+       {
+        "title": "OON",
+        "color": "#7A869A"
+       },
+       {
+        "title": "Priority",
+        "color": "#B2DFDB"
+       },
+       {
+        "title": "Cigna",
+        "color": "#FFB74D"
+       }
+      ]
+     }
+    },
+    {
+     "title": "Verification Status",
+     "type": "SingleSelect",
+     "options": {
+      "choices": [
+       {
+        "title": "Verified",
+        "color": "#27D665"
+       },
+       {
+        "title": "Pending",
+        "color": "#FCBE3A"
+       },
+       {
+        "title": "No ins found",
+        "color": "#FF4A3F"
+       },
+       {
+        "title": "Inactive",
+        "color": "#B0B0B0"
+       }
+      ]
+     }
+    },
+    {
+     "title": "Referral Obtained",
+     "type": "SingleSelect",
+     "options": {
+      "choices": [
+       {
+        "title": "Not needed",
+        "color": "#B0B0B0"
+       },
+       {
+        "title": "Yes",
+        "color": "#27D665"
+       },
+       {
+        "title": "No",
+        "color": "#FF4A3F"
+       }
+      ]
+     }
+    },
+    {
+     "title": "Notes",
+     "type": "LongText"
+    },
+    {
+     "title": "Date Worked",
+     "type": "Date",
+     "options": {
+      "date_format": "MM/DD/YYYY"
+     }
+    },
+    {
+     "title": "DOS",
+     "type": "Date",
+     "options": {
+      "date_format": "MM/DD/YYYY"
+     }
+    }
+   ]
+  },
+  {
+   "title": "Authorizations",
+   "description": "Hodroj auth log (one record per authorization request).",
+   "fields": [
+    {
+     "title": "Patient Name",
+     "type": "SingleLineText",
+     "description": "LAST, FIRST"
+    },
+    {
+     "title": "Date",
+     "type": "Date",
+     "options": {
+      "date_format": "MM/DD/YYYY"
+     },
+     "description": "Date the auth was worked"
+    },
+    {
+     "title": "Channel",
+     "type": "SingleSelect",
+     "options": {
+      "choices": [
+       {
+        "title": "Portal",
+        "color": "#36BFFF"
+       },
+       {
+        "title": "Outbound",
+        "color": "#FA8231"
+       },
+       {
+        "title": "Fax",
+        "color": "#27D665"
+       }
+      ]
+     }
+    },
+    {
+     "title": "Insurance ID",
+     "type": "SingleLineText"
+    },
+    {
+     "title": "Date of Birth",
+     "type": "Date",
+     "options": {
+      "date_format": "MM/DD/YYYY"
+     }
+    },
+    {
+     "title": "Procedure",
+     "type": "SingleLineText"
+    },
+    {
+     "title": "CPT Codes",
+     "type": "SingleLineText"
+    },
+    {
+     "title": "DX Codes",
+     "type": "SingleLineText"
+    },
+    {
+     "title": "PT Resp",
+     "type": "SingleLineText",
+     "default_value": "NO PT RESP"
+    },
+    {
+     "title": "Date of Service",
+     "type": "Date",
+     "options": {
+      "date_format": "MM/DD/YYYY"
+     }
+    },
+    {
+     "title": "DOS TBD",
+     "type": "Checkbox",
+     "description": "Checked when the date of service is still TBD"
+    },
+    {
+     "title": "Date Requested",
+     "type": "Date",
+     "options": {
+      "date_format": "MM/DD/YYYY"
+     }
+    },
+    {
+     "title": "Auth Valid From",
+     "type": "Date",
+     "options": {
+      "date_format": "MM/DD/YYYY"
+     },
+     "description": "Start of 'AUTH VALID DAYS' range"
+    },
+    {
+     "title": "Auth Valid To",
+     "type": "Date",
+     "options": {
+      "date_format": "MM/DD/YYYY"
+     },
+     "description": "End of 'AUTH VALID DAYS' range"
+    },
+    {
+     "title": "Decision Date",
+     "type": "Date",
+     "options": {
+      "date_format": "MM/DD/YYYY"
+     },
+     "description": "Second 'DATE REQUESTED' column in the sheet (filled when the case is resolved)"
+    },
+    {
+     "title": "Status",
+     "type": "SingleSelect",
+     "options": {
+      "choices": [
+       {
+        "title": "Approved",
+        "color": "#27D665"
+       },
+       {
+        "title": "PA Not Required",
+        "color": "#20C933"
+       },
+       {
+        "title": "Pending",
+        "color": "#FCBE3A"
+       },
+       {
+        "title": "D/S",
+        "color": "#B0B0B0"
+       },
+       {
+        "title": "Denied",
+        "color": "#FF4A3F"
+       },
+       {
+        "title": "Appeal Pending",
+        "color": "#FA8231"
+       },
+       {
+        "title": "Appeal Approved",
+        "color": "#0B8A73"
+       },
+       {
+        "title": "Appeal Denied",
+        "color": "#8B0000"
+       }
+      ]
+     },
+     "default_value": "Pending"
+    },
+    {
+     "title": "Auth / Ref #",
+     "type": "SingleLineText"
+    },
+    {
+     "title": "Comments / Notes",
+     "type": "LongText"
+    }
+   ]
+  },
+  {
+   "title": "Auth Follow-ups",
+   "description": "Follow-ups on an authorization case (many per authorization).",
+   "fields": [
+    {
+     "title": "Summary",
+     "type": "SingleLineText",
+     "description": "Short title, e.g. 'Called Molina - still pending'"
+    },
+    {
+     "title": "Follow-up Date",
+     "type": "Date",
+     "options": {
+      "date_format": "MM/DD/YYYY"
+     }
+    },
+    {
+     "title": "Channel",
+     "type": "SingleSelect",
+     "options": {
+      "choices": [
+       {
+        "title": "Portal",
+        "color": "#36BFFF"
+       },
+       {
+        "title": "Outbound",
+        "color": "#FA8231"
+       },
+       {
+        "title": "Fax",
+        "color": "#27D665"
+       }
+      ]
+     }
+    },
+    {
+     "title": "Notes",
+     "type": "LongText"
+    }
+   ]
+  },
+  {
+   "title": "Procedure Coordination",
+   "description": "Coordination of procedures with the doctor (CSJ 'Auth Log' sheet).",
+   "fields": [
+    {
+     "title": "Patient Name",
+     "type": "SingleLineText",
+     "description": "LAST, FIRST"
+    },
+    {
+     "title": "Date",
+     "type": "Date",
+     "options": {
+      "date_format": "MM/DD/YYYY"
+     }
+    },
+    {
+     "title": "Date of Birth",
+     "type": "Date",
+     "options": {
+      "date_format": "MM/DD/YYYY"
+     }
+    },
+    {
+     "title": "Date of Service",
+     "type": "Date",
+     "options": {
+      "date_format": "MM/DD/YYYY"
+     }
+    },
+    {
+     "title": "Clearance",
+     "type": "SingleSelect",
+     "options": {
+      "choices": [
+       {
+        "title": "Not Started",
+        "color": "#B0B0B0"
+       },
+       {
+        "title": "Not Needed",
+        "color": "#36BFFF"
+       },
+       {
+        "title": "Received",
+        "color": "#27D665"
+       },
+       {
+        "title": "Not Obtained",
+        "color": "#FCBE3A"
+       },
+       {
+        "title": "Denied",
+        "color": "#FF4A3F"
+       }
+      ]
+     }
+    },
+    {
+     "title": "Auth",
+     "type": "SingleSelect",
+     "options": {
+      "choices": [
+       {
+        "title": "Not Started",
+        "color": "#B0B0B0"
+       },
+       {
+        "title": "Obtained",
+        "color": "#27D665"
+       },
+       {
+        "title": "Denied",
+        "color": "#FF4A3F"
+       },
+       {
+        "title": "N/A Verifier Guarantee",
+        "color": "#FF4A3F"
+       },
+       {
+        "title": "Under Litigation",
+        "color": "#7D26CD"
+       },
+       {
+        "title": "Open Billable",
+        "color": "#FCBE3A"
+       },
+       {
+        "title": "Under Review",
+        "color": "#FCBE3A"
+       }
+      ]
+     },
+     "default_value": "Not Started"
+    },
+    {
+     "title": "Verification",
+     "type": "SingleSelect",
+     "options": {
+      "choices": [
+       {
+        "title": "Not Started",
+        "color": "#B0B0B0"
+       },
+       {
+        "title": "Verified",
+        "color": "#27D665"
+       },
+       {
+        "title": "No Coverage",
+        "color": "#FF4A3F"
+       },
+       {
+        "title": "3rd Party- LOP on File",
+        "color": "#FF4A3F"
+       }
+      ]
+     },
+     "default_value": "Not Started"
+    },
+    {
+     "title": "Transportation",
+     "type": "SingleSelect",
+     "options": {
+      "choices": [
+       {
+        "title": "Not Started",
+        "color": "#B0B0B0"
+       },
+       {
+        "title": "Not Needed",
+        "color": "#36BFFF"
+       },
+       {
+        "title": "Arranged",
+        "color": "#27D665"
+       },
+       {
+        "title": "Not Arranged",
+        "color": "#FCBE3A"
+       }
+      ]
+     },
+     "default_value": "Not Started"
+    },
+    {
+     "title": "Pre Op Info Sent",
+     "type": "SingleSelect",
+     "options": {
+      "choices": [
+       {
+        "title": "Yes",
+        "color": "#27D665"
+       },
+       {
+        "title": "No",
+        "color": "#B0B0B0"
+       }
+      ]
+     },
+     "default_value": "No"
+    },
+    {
+     "title": "Procedure Meds",
+     "type": "SingleSelect",
+     "options": {
+      "choices": [
+       {
+        "title": "Received",
+        "color": "#27D665"
+       },
+       {
+        "title": "Not Received",
+        "color": "#FCBE3A"
+       },
+       {
+        "title": "Not Sent",
+        "color": "#FF4A3F"
+       },
+       {
+        "title": "N/A",
+        "color": "#B0B0B0"
+       }
+      ]
+     }
+    },
+    {
+     "title": "Status",
+     "type": "SingleSelect",
+     "options": {
+      "choices": [
+       {
+        "title": "Good to Go",
+        "color": "#27D665"
+       },
+       {
+        "title": "Pending",
+        "color": "#FCBE3A"
+       },
+       {
+        "title": "Unable to Proceed",
+        "color": "#FF4A3F"
+       }
+      ]
+     },
+     "default_value": "Pending"
+    },
+    {
+     "title": "Preferred Language",
+     "type": "SingleSelect",
+     "options": {
+      "choices": [
+       {
+        "title": "English",
+        "color": "#36BFFF"
+       },
+       {
+        "title": "Spanish",
+        "color": "#FA8231"
+       },
+       {
+        "title": "Arabic",
+        "color": "#27D665"
+       }
+      ]
+     },
+     "default_value": "English"
+    }
+   ]
+  }
+ ],
+ "links": [
+  {
+   "parent": "Patients",
+   "child": "Verifications",
+   "title": "Verifications"
+  },
+  {
+   "parent": "Patients",
+   "child": "Authorizations",
+   "title": "Authorizations"
+  },
+  {
+   "parent": "Patients",
+   "child": "Procedure Coordination",
+   "title": "Procedure Coordinations"
+  },
+  {
+   "parent": "Insurances",
+   "child": "Authorizations",
+   "title": "Authorizations"
+  },
+  {
+   "parent": "Authorizations",
+   "child": "Auth Follow-ups",
+   "title": "Follow-ups"
+  },
+  {
+   "parent": "Procedures",
+   "child": "Procedure Coordination",
+   "title": "Procedure Coordinations"
+  }
+ ],
+ "seed": {
+  "Procedures": [
+   {
+    "Procedure Name": "CERVICAL MEDIAL BRANCH BLOCK (MBB)",
+    "Category": "Major Procedures",
+    "Active": true
+   },
+   {
+    "Procedure Name": "THORACIC MEDIAL BRANCH BLOCK (MBB)",
+    "Category": "Major Procedures",
+    "Active": true
+   },
+   {
+    "Procedure Name": "LUMBAR MEDIAL BRANCH BLOCK (MBB)",
+    "Category": "Major Procedures",
+    "Active": true
+   },
+   {
+    "Procedure Name": "CERVICAL RADIOFREQUENCY ABLATION (RFA)",
+    "Category": "Major Procedures",
+    "Active": true
+   },
+   {
+    "Procedure Name": "THORACIC RADIOFREQUENCY ABLATION (RFA)",
+    "Category": "Major Procedures",
+    "Active": true
+   },
+   {
+    "Procedure Name": "LUMBAR RADIOFREQUENCY ABLATION (RFA)",
+    "Category": "Major Procedures",
+    "Active": true
+   },
+   {
+    "Procedure Name": "CERVICAL TRANSFORAMINAL EPIDURAL STEROID INJECTION (TFESI)",
+    "Category": "Major Procedures",
+    "Active": true
+   },
+   {
+    "Procedure Name": "THORACIC TRANSFORAMINAL EPIDURAL STEROID INJECTION (TFESI)",
+    "Category": "Major Procedures",
+    "Active": true
+   },
+   {
+    "Procedure Name": "LUMBAR TRANSFORAMINAL EPIDURAL STEROID INJECTION (TFESI)",
+    "Category": "Major Procedures",
+    "Active": true
+   },
+   {
+    "Procedure Name": "CERVICAL INTERLAMINAR EPIDURAL STEROID INJECTION (ESI)",
+    "Category": "Major Procedures",
+    "Active": true
+   },
+   {
+    "Procedure Name": "THORACIC INTERLAMINAR EPIDURAL STEROID INJECTION (ESI)",
+    "Category": "Major Procedures",
+    "Active": true
+   },
+   {
+    "Procedure Name": "LUMBAR INTERLAMINAR EPIDURAL STEROID INJECTION (ESI)",
+    "Category": "Major Procedures",
+    "Active": true
+   },
+   {
+    "Procedure Name": "SACROILIAC (SI) JOINT INJECTION",
+    "Category": "Major Procedures",
+    "Active": true
+   },
+   {
+    "Procedure Name": "KNEE IA INJECTION",
+    "Category": "Minor Procedures",
+    "Active": true
+   },
+   {
+    "Procedure Name": "SHOULDER IA INJECTION",
+    "Category": "Minor Procedures",
+    "Active": true
+   },
+   {
+    "Procedure Name": "HIP IA INJECTION",
+    "Category": "Minor Procedures",
+    "Active": true
+   },
+   {
+    "Procedure Name": "GENICULAR KNEE INJECTION",
+    "Category": "Minor Procedures",
+    "Active": true
+   },
+   {
+    "Procedure Name": "TRIGGER POINT INJECTION (TPI)",
+    "Category": "Minor Procedures",
+    "Active": true
+   },
+   {
+    "Procedure Name": "BURSA INJECTION",
+    "Category": "Minor Procedures",
+    "Active": true
+   },
+   {
+    "Procedure Name": "LUMBAR TENDON SHEATH",
+    "Category": "Minor Procedures",
+    "Active": true
+   },
+   {
+    "Procedure Name": "CERVICAL TENDON SHEATH",
+    "Category": "Minor Procedures",
+    "Active": true
+   },
+   {
+    "Procedure Name": "GON LON SON TON",
+    "Category": "Minor Procedures",
+    "Active": true
+   },
+   {
+    "Procedure Name": "SUBSCAPULAR BURSITIS",
+    "Category": "Minor Procedures",
+    "Active": true
+   },
+   {
+    "Procedure Name": "OCCIPITAL NB",
+    "Category": "Minor Procedures",
+    "Active": true
+   },
+   {
+    "Procedure Name": "PLATELET-RICH PLASMA (PRP) INJECTION",
+    "Category": "Minor Procedures",
+    "Active": true
+   },
+   {
+    "Procedure Name": "SPINAL CORD STIMULATOR (SCS) TRIAL",
+    "Category": "Minor Procedures",
+    "Active": true
+   },
+   {
+    "Procedure Name": "OCCIPITAL NERVE BLOCK/BOTOX FOR MIGRAINE",
+    "Category": "Minor Procedures",
+    "Active": true
+   },
+   {
+    "Procedure Name": "LASER THERAPY",
+    "Category": "Minor Procedures",
+    "Active": true
+   },
+   {
+    "Procedure Name": "MRI",
+    "Category": "Tests",
+    "Active": true
+   },
+   {
+    "Procedure Name": "DOPPLER UPPER EXTREMITY",
+    "Category": "Tests",
+    "Active": true
+   },
+   {
+    "Procedure Name": "DOPPLER LOWER EXTREMITY",
+    "Category": "Tests",
+    "Active": true
+   },
+   {
+    "Procedure Name": "EMG/NCV UPPER EXTREMITY",
+    "Category": "Tests",
+    "Active": true
+   },
+   {
+    "Procedure Name": "EMG/NCV LOWER EXTREMITY",
+    "Category": "Tests",
+    "Active": true
+   },
+   {
+    "Procedure Name": "EEG",
+    "Category": "Tests",
+    "Active": true
+   }
+  ],
+  "Insurances": [
+   {
+    "Payer Name": "ACCIDENT RISK SOLUTIONS",
+    "Short Name": "Other",
+    "Active": true,
+    "Payer Type": "Auto / PIP"
+   },
+   {
+    "Payer Name": "AETNA",
+    "Short Name": "Aetna",
+    "Active": true
+   },
+   {
+    "Payer Name": "AETNA BETTER HEALTH OF MICHIGAN",
+    "Short Name": "Aetna",
+    "Active": true
+   },
+   {
+    "Payer Name": "AETNA LEGACY",
+    "Short Name": "Aetna",
+    "Active": true
+   },
+   {
+    "Payer Name": "AETNA MEDICAID",
+    "Short Name": "Aetna",
+    "Active": true
+   },
+   {
+    "Payer Name": "ALIGN SENIOR CARE OF MICHIGAN",
+    "Short Name": "Other",
+    "Active": true
+   },
+   {
+    "Payer Name": "ALLSTATE",
+    "Short Name": "Other",
+    "Active": true,
+    "Payer Type": "Auto / PIP"
+   },
+   {
+    "Payer Name": "AMBETTER",
+    "Short Name": "Other",
+    "Active": true
+   },
+   {
+    "Payer Name": "AMBETTER FROM SUNSHINE HEALTH PLAN (CENTENE)",
+    "Short Name": "Other",
+    "Active": true,
+    "Aliases": "AMBETTER FROM SUNSHINE HEALTH PLAN"
+   },
+   {
+    "Payer Name": "AMBETTER OF MERIDIAN",
+    "Short Name": "Meridian",
+    "Active": true
+   },
+   {
+    "Payer Name": "AMERIHEALTH CARITAS VIP CARE PLUS OF MICHIGAN",
+    "Short Name": "Bluecross complete",
+    "Active": true
+   },
+   {
+    "Payer Name": "ANTHEM BCBS",
+    "Short Name": "Bcbs",
+    "Active": true
+   },
+   {
+    "Payer Name": "ASR HEALTH BENEFITS",
+    "Short Name": "Other",
+    "Active": true
+   },
+   {
+    "Payer Name": "AUTO CLAIM",
+    "Short Name": "Other",
+    "Active": true,
+    "Payer Type": "Auto / PIP"
+   },
+   {
+    "Payer Name": "BCBS FEDERAL",
+    "Short Name": "Bcbs",
+    "Active": true
+   },
+   {
+    "Payer Name": "BCBS OF MICHIGAN PPO",
+    "Short Name": "Bcbs",
+    "Active": true
+   },
+   {
+    "Payer Name": "BCN HMO MEDICAL REGULAR MEMBER CLASSIC",
+    "Short Name": "Bcbs",
+    "Active": true
+   },
+   {
+    "Payer Name": "BLUE CARE NETWORK",
+    "Short Name": "Bcbs",
+    "Active": true
+   },
+   {
+    "Payer Name": "BLUE CARE NETWORK HMO",
+    "Short Name": "Bcbs",
+    "Active": true
+   },
+   {
+    "Payer Name": "BLUE CROSS BLUE SHIELD MICHIGAN (BCBS MI)",
+    "Short Name": "Bcbs",
+    "Active": true,
+    "Aliases": "BLUE CROSS BLUE SHIELD MICHIGAN"
+   },
+   {
+    "Payer Name": "BLUE CROSS COMPLETE OF MICHIGAN (AMERIHEALTH CARITAS)",
+    "Short Name": "Bluecross complete",
+    "Active": true,
+    "Aliases": "BLUE CROSS COMPLETE OF MICHIGAN (AMERIHEALTH"
+   },
+   {
+    "Payer Name": "BLUE CROSS COMPLETE OF MICHIGAN, LLC",
+    "Short Name": "Bluecross complete",
+    "Active": true
+   },
+   {
+    "Payer Name": "BLUE CROSS MICHIGAN BLUE CARE COMPLETE",
+    "Short Name": "Bluecross complete",
+    "Active": true
+   },
+   {
+    "Payer Name": "BLUECARE NETWORK ADVANTAGE",
+    "Short Name": "Bcbs",
+    "Active": true,
+    "Aliases": "BLUCARE NETWORK ADVANTAGE"
+   },
+   {
+    "Payer Name": "BLUECARE NETWORK HMO",
+    "Short Name": "Bcbs",
+    "Active": true,
+    "Aliases": "MICHIGAN BLUCARE NETWORK HMO"
+   },
+   {
+    "Payer Name": "CARESOURCE OF MICHIGAN MEDICAID (HAP)",
+    "Short Name": "Caresource",
+    "Active": true
+   },
+   {
+    "Payer Name": "CENTENE",
+    "Short Name": "Other",
+    "Active": true
+   },
+   {
+    "Payer Name": "CIGNA",
+    "Short Name": "Cigna",
+    "Active": true
+   },
+   {
+    "Payer Name": "CIGNA HEALTH PLAN PPO",
+    "Short Name": "Cigna",
+    "Active": true
+   },
+   {
+    "Payer Name": "CORVEL CORP WC J4110",
+    "Short Name": "Other",
+    "Active": true,
+    "Payer Type": "Workers Comp"
+   },
+   {
+    "Payer Name": "FARM BUREAU MUTUAL AUTO",
+    "Short Name": "Other",
+    "Active": true,
+    "Payer Type": "Auto / PIP"
+   },
+   {
+    "Payer Name": "FARMERS INSURANCE",
+    "Short Name": "Other",
+    "Active": true,
+    "Payer Type": "Auto / PIP"
+   },
+   {
+    "Payer Name": "FRANKENMUTH INSURANCE",
+    "Short Name": "Other",
+    "Active": true,
+    "Payer Type": "Auto / PIP"
+   },
+   {
+    "Payer Name": "GALLAGHER BASSETT SERVICES, INC. WORKERS COMPENSATION",
+    "Short Name": "Other",
+    "Active": true,
+    "Payer Type": "Workers Comp"
+   },
+   {
+    "Payer Name": "GEICO",
+    "Short Name": "Other",
+    "Active": true,
+    "Payer Type": "Auto / PIP"
+   },
+   {
+    "Payer Name": "GOLDEN RULE INSURANCE (UNITEDHEALTHONE)",
+    "Short Name": "UHC",
+    "Active": true
+   },
+   {
+    "Payer Name": "GREAT AMERICAN INSURANCE GROUP",
+    "Short Name": "Other",
+    "Active": true,
+    "Payer Type": "Auto / PIP"
+   },
+   {
+    "Payer Name": "GREAT LAKES HEALTH PLAN (UNITEDHEALTHCARE COMMUNITY PLAN)",
+    "Short Name": "UHC",
+    "Active": true
+   },
+   {
+    "Payer Name": "HAP",
+    "Short Name": "HAP",
+    "Active": true
+   },
+   {
+    "Payer Name": "HAP CARESOURCE",
+    "Short Name": "Caresource",
+    "Active": true,
+    "Aliases": "HAP CARSOURCE MEDICAID"
+   },
+   {
+    "Payer Name": "HARTFORD",
+    "Short Name": "Other",
+    "Active": true,
+    "Payer Type": "Auto / PIP"
+   },
+   {
+    "Payer Name": "HEALTH ALLIANCE PLAN (HAP)",
+    "Short Name": "HAP",
+    "Active": true
+   },
+   {
+    "Payer Name": "HEALTH ALLIANCE PLAN (HAP) & LIFE PPO",
+    "Short Name": "HAP",
+    "Active": true
+   },
+   {
+    "Payer Name": "HEALTH ALLIANCE PLAN (HAP) OF MI",
+    "Short Name": "HAP",
+    "Active": true,
+    "Aliases": "HEALTH ALLIANCE PLAN (HAP) OF M\nHEALTH ALLIANCE PLAN (HAP) OF MI ("
+   },
+   {
+    "Payer Name": "HEALTH ALLIANCE PLAN (HAP) OF MI (MVP OF OH-AHL-CURANET)",
+    "Short Name": "HAP",
+    "Active": true,
+    "Aliases": "HEALTH ALLIANCE PLAN (HAP) OF MI (MVP OF OH AHL CURANET)\nHEALTH ALLIANCE PLAN (HAP) OF MI (MVP OF OH AHL CURANET) (DOS BEFORE 10/01/23)\nHEALTH ALLIANCE PLAN (HAP) OF MICHIGAN (MVP OF OHIO - AHL - CURANET)\nHEALTH ALLIANCE PLAN (HAP) OF MICHIGAN (MVP OF OHIO-AHL-CURANET)"
+   },
+   {
+    "Payer Name": "HEALTH ALLIANCE PLAN OF MICHIGAN",
+    "Short Name": "HAP",
+    "Active": true
+   },
+   {
+    "Payer Name": "HEALTH CHOICE OF MICHIGAN",
+    "Short Name": "Other",
+    "Active": true,
+    "Aliases": "HEALTH CHOISE OF MICHIGAN"
+   },
+   {
+    "Payer Name": "HUMANA",
+    "Short Name": "Humana",
+    "Active": true,
+    "Aliases": "HUMNA"
+   },
+   {
+    "Payer Name": "INFINITY PHYSICAL THERAPY",
+    "Short Name": "Other",
+    "Active": true
+   },
+   {
+    "Payer Name": "INGHAM HEALTH PLAN",
+    "Short Name": "Other",
+    "Active": true,
+    "Aliases": "INGRAM HEALTH PLAN"
+   },
+   {
+    "Payer Name": "KEY SOLUTION",
+    "Short Name": "Other",
+    "Active": true
+   },
+   {
+    "Payer Name": "LIBERTY MUTUAL AUTO EX1058",
+    "Short Name": "Other",
+    "Active": true,
+    "Payer Type": "Auto / PIP"
+   },
+   {
+    "Payer Name": "MCLAREN",
+    "Short Name": "Mclaren",
+    "Active": true
+   },
+   {
+    "Payer Name": "MCLAREN ADVANTAGE SNP",
+    "Short Name": "Mclaren",
+    "Active": true
+   },
+   {
+    "Payer Name": "MCLAREN HEALTH ADVANTAGE",
+    "Short Name": "Mclaren",
+    "Active": true
+   },
+   {
+    "Payer Name": "MCLAREN HEALTH PLAN",
+    "Short Name": "Mclaren",
+    "Active": true
+   },
+   {
+    "Payer Name": "MCLAREN INSURANCE",
+    "Short Name": "Mclaren",
+    "Active": true
+   },
+   {
+    "Payer Name": "MCLAREN MEDICAID",
+    "Short Name": "Mclaren",
+    "Active": true
+   },
+   {
+    "Payer Name": "MCLAREN MICHIGAN",
+    "Short Name": "Mclaren",
+    "Active": true
+   },
+   {
+    "Payer Name": "MCLAREN STATE OF MICHIGAN",
+    "Short Name": "Mclaren",
+    "Active": true
+   },
+   {
+    "Payer Name": "MEDICAID MICHIGAN",
+    "Short Name": "Medicaid",
+    "Active": true,
+    "Payer Type": "Medicaid",
+    "Aliases": "MEDICADE"
+   },
+   {
+    "Payer Name": "MEDICARE PART B MICHIGAN",
+    "Short Name": "Medicare part b",
+    "Active": true,
+    "Payer Type": "Medicare",
+    "Aliases": "MEDICARE PART B MICHIGAN *"
+   },
+   {
+    "Payer Name": "MERIDIAN HEALTH PLAN MICHIGAN COMPLETE",
+    "Short Name": "Meridian",
+    "Active": true
+   },
+   {
+    "Payer Name": "MERIDIAN HEALTH PLAN OF MICHIGAN",
+    "Short Name": "Meridian",
+    "Active": true
+   },
+   {
+    "Payer Name": "MERIDIAN HEALTH PLAN OF MICHIGAN (MERIDIANCOMPLETE)",
+    "Short Name": "Meridian",
+    "Active": true
+   },
+   {
+    "Payer Name": "MERIDIAN HEALTH PLAN OF MICHIGAN (MERIDIANHEALTH MICHIGAN)",
+    "Short Name": "Meridian",
+    "Active": true
+   },
+   {
+    "Payer Name": "MICHIGAN BCBS FEDERAL EMPLOYEE PROGRAM (FEP)",
+    "Short Name": "Bcbs",
+    "Active": true,
+    "Aliases": "MICHIGAN BCBS FEDERAL EMPLOYEE"
+   },
+   {
+    "Payer Name": "MICHIGAN BLUE CARE NETWORK",
+    "Short Name": "Bcbs",
+    "Active": true
+   },
+   {
+    "Payer Name": "MICHIGAN BLUE CARE NETWORK HMO (BCN OF MICHIGAN)",
+    "Short Name": "Bcbs",
+    "Active": true
+   },
+   {
+    "Payer Name": "MICHIGAN BLUECARE NETWORK",
+    "Short Name": "Bcbs",
+    "Active": true
+   },
+   {
+    "Payer Name": "MICHIGAN BLUECARE NETWORK ADVANTAGE",
+    "Short Name": "Bcbs",
+    "Active": true
+   },
+   {
+    "Payer Name": "MICHIGAN MEDICARE PLUSBLUE",
+    "Short Name": "Bcbs",
+    "Active": true
+   },
+   {
+    "Payer Name": "MOLINA HEALTHCARE OF MICHIGAN",
+    "Short Name": "Molina",
+    "Active": true
+   },
+   {
+    "Payer Name": "NATIONAL GENERAL",
+    "Short Name": "Other",
+    "Active": true,
+    "Payer Type": "Auto / PIP"
+   },
+   {
+    "Payer Name": "PHYSICIANS CARE NETWORK",
+    "Short Name": "Other",
+    "Active": true
+   },
+   {
+    "Payer Name": "PRIORITY HEALTH",
+    "Short Name": "Priority",
+    "Active": true
+   },
+   {
+    "Payer Name": "PROGRESSIVE",
+    "Short Name": "Other",
+    "Active": true,
+    "Payer Type": "Auto / PIP"
+   },
+   {
+    "Payer Name": "RELIANCE MEDICARE ADVANTAGE",
+    "Short Name": "Other",
+    "Active": true
+   },
+   {
+    "Payer Name": "RISK ADMINISTRATION",
+    "Short Name": "Other",
+    "Active": true,
+    "Payer Type": "Workers Comp"
+   },
+   {
+    "Payer Name": "RISK ADMINISTRATION SERVICES WCC PAPER E1122",
+    "Short Name": "Other",
+    "Active": true,
+    "Payer Type": "Workers Comp"
+   },
+   {
+    "Payer Name": "SEDGWICK CLAIMS MANAGEMENT SERVICES (CMS) - AVAILITY",
+    "Short Name": "Other",
+    "Active": true,
+    "Payer Type": "Workers Comp"
+   },
+   {
+    "Payer Name": "STATE FARM E3276",
+    "Short Name": "Other",
+    "Active": true,
+    "Payer Type": "Auto / PIP"
+   },
+   {
+    "Payer Name": "TRAVELERS INSURANCE",
+    "Short Name": "Other",
+    "Active": true,
+    "Payer Type": "Auto / PIP"
+   },
+   {
+    "Payer Name": "TRICARE",
+    "Short Name": "Tricare",
+    "Active": true
+   },
+   {
+    "Payer Name": "TRICARE WEST",
+    "Short Name": "Tricare",
+    "Active": true
+   },
+   {
+    "Payer Name": "TRIEAST (HUMANA MILITARY)",
+    "Short Name": "Tricare",
+    "Active": true
+   },
+   {
+    "Payer Name": "TRINITY HEALTH",
+    "Short Name": "Other",
+    "Active": true
+   },
+   {
+    "Payer Name": "UMR",
+    "Short Name": "UMR",
+    "Active": true
+   },
+   {
+    "Payer Name": "UMR WAUSAU / UHIS",
+    "Short Name": "UMR",
+    "Active": true
+   },
+   {
+    "Payer Name": "UNITED HEALTHCARE",
+    "Short Name": "UHC",
+    "Active": true
+   },
+   {
+    "Payer Name": "UNITEDHEALTHCARE COMMUNITY PLAN MICHIGAN",
+    "Short Name": "UHC",
+    "Active": true
+   },
+   {
+    "Payer Name": "UNITEDHEALTHCARE SHARED SERVICES",
+    "Short Name": "UHC",
+    "Active": true
+   },
+   {
+    "Payer Name": "VARIPRO",
+    "Short Name": "Other",
+    "Active": true
+   },
+   {
+    "Payer Name": "WC",
+    "Short Name": "Other",
+    "Active": true,
+    "Payer Type": "Workers Comp"
+   },
+   {
+    "Payer Name": "WELLCARE",
+    "Short Name": "Wellcare",
+    "Active": true
+   },
+   {
+    "Payer Name": "WELLCARE SIMPLE",
+    "Short Name": "Wellcare",
+    "Active": true
+   },
+   {
+    "Payer Name": "ZING HEALTH",
+    "Short Name": "Zing",
+    "Active": true
+   },
+   {
+    "Payer Name": "ZURICH INSURANCE",
+    "Short Name": "Other",
+    "Active": true,
+    "Payer Type": "Auto / PIP"
+   }
+  ]
+ }
+}
